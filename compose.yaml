@@ -1,0 +1,20 @@
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=test
+    restart: always
+    ports:
+      - 3306:3306
+  toxiproxy:
+    image: ghcr.io/shopify/toxiproxy:2.5.0
+    ports:
+      - 8474:8474
+      - 3307:3307
+    command: ['--config', '/toxiproxy.json', '--host', '0.0.0.0']
+    volumes:
+      - type: bind
+        source: ./toxiproxy.json
+        target: /toxiproxy.json
+    restart: always

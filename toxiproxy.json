@@ -1,0 +1,8 @@
+[
+  {
+    "name": "mysql",
+    "listen": "[::]:3307",
+    "upstream": "mysql:3306",
+    "enabled": true
+  }
+]

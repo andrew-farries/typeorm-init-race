@@ -1,0 +1,7 @@
+{
+  "watch": ["src"],
+  "ext": ".ts,.js",
+  "ignore": [],
+  "exec": "ts-node ./src/index.ts",
+  "exec": "nodemon -x node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts"
+}
